@@ -1,3 +1,6 @@
+html {
+    overflow-x: hidden;
+  }
 .body{
     margin: 0 auto;
     width: 100%;
@@ -107,4 +110,53 @@
     padding: 20px;
     text-align: center;
     margin-left: 50%;
+  }
+
+
+  .form-horizontal{
+      background: url(https://cdn.hipwallpaper.com/i/85/56/TamSoR.jpg)no-repeat center;
+  }
+
+  .input-lbl
+  {
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: rgb(233, 215, 215);
+
+  }
+
+  .inpt-field
+  {
+      background: none !important;
+        border: 1px solid rgb(191, 233, 128) !important;
+      box-shadow: rgb(157, 236, 120) 0px 20px 30px -10px;
+      color: rgb(78, 207, 106) !important;
+  }
+
+  .well-sm
+  {
+    box-shadow: rgb(27, 30, 32) 0px 20px 30px -10px !important;
+  }
+
+  .inpt-field:hover
+  {
+    box-shadow: rgb(240, 118, 81) 0px 20px 30px -10px;
+  }
+
+  .form-group
+  {
+      margin-left: 15%;
+  }
+
+  .cntct-submit
+  {
+      margin-right: 22%;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      border-radius: 6px;
+  }
+
+  .cntct-submit:hover{
+    box-shadow: rgb(219, 71, 25) 1px 20px 30px -10px;
+    background-color: cornflowerblue !important;
   }

@@ -1,7 +1,7 @@
 <div class='container-fluid'>
-    <div class="card">
+    <div class="card" id="cards">
         <div class="heading text-center">
-            <div class="head1">---PetsToHome Is Here---</div>
+            <div class="head1"><i class="fas fa-paw fa-1x"></i>PetsToHome Is Here <i class="fas fa-paw fa-1x"></i></div>
             <p class="bdr"></p>
         </div>
         <div class="card-body">
@@ -48,17 +48,23 @@
 <style>
 
 .card {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     margin-top: 50px;
-    border: none
+    border: none;
+    background: none;
+}
+.card-body{
+
+box-shadow: 2px 5px 15px 1px black;
 }
 
 .head1 {
     font-weight: 900;
     font-size: 30px;
-    color: lightgreen;
-    text-shadow: 2px 2px 10px red;
+    color: black;
+    text-shadow: 2px 2px 10px gray;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .bdr {

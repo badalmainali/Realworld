@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .forms import NewUserForm
+from django.contrib.auth import login
+from django.contrib import messages #import messages
 
 # Create your views here.
 def main(request):
@@ -9,3 +12,5 @@ def about(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+

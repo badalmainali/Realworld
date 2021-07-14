@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Pets
+{% endblock %}
+
+{% block content %}
+
+<div class="container mr-auto">
+<h1 class="text-center">All kind of familiar pets are available here..</h1><hr>
+<div class="row">
+{% for p in pets %}
+<div class="col-md-3" style="margin-top: 15px; margin-left:0px;">
+  <img class="imgs" src="{{p.image.url}}" alt="" width="198" style="height:240px; ">
+  <p class="font-size" style="margin-top:6px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Name: </span><span style=" font-size:18px;">{{p.title}}</span></p>
+  <p class="petss" style="margin-top:-12px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 20px;">Price:</span> <span style="font-size: 18px;"><strike>Rs. {{p.marked_price}}</strike> Rs.{{p.selling_price}}</span></p>
+  <p>Category: {{p.category}}</p>
+
+  <a href="" class="btn btn-primary" style="margin-top:-12px;">Buy Now <i class="fas fa-shopping-cart fa-1x"></i></a><i class="fas fa-love"></i>
+
+
+</div>
+
+{% endfor %}
+</div>
+  </div>
+
+<style>
+  .imgs{
+    box-shadow: 2px 5px 15px 1px black;
+  }
+</style>
+{% endblock %}

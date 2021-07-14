@@ -24,7 +24,7 @@ class Pets(models.Model):
     title=models.CharField(max_length=200)
     slug=models.SlugField(unique=True)
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
-    image=models.ImageField(upload_to="products")
+    image=models.ImageField(upload_to="static/images")
     marked_price=models.PositiveIntegerField()
     selling_price=models.PositiveIntegerField()
     description=models.TextField()

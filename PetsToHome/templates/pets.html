@@ -6,14 +6,15 @@ Pets
 {% block content %}
 
 <div class="container mr-auto">
-<h1 class="text-center">All kind of familiar pets are available here..</h1><hr>
-<div class="row">
+<h1 class="text-center hds">Searching pets? Here you go...</h1><hr>
+<div class="row" style="margin-left: 113px;">
 {% for p in pets %}
-<div class="col-md-3" style="margin-top: 15px; margin-left:0px;">
-  <img class="imgs" src="{{p.image.url}}" alt="" width="198" style="height:240px; ">
-  <p class="font-size" style="margin-top:6px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Name: </span><span style=" font-size:18px;">{{p.title}}</span></p>
-  <p class="petss" style="margin-top:-12px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 20px;">Price:</span> <span style="font-size: 18px;"><strike>Rs. {{p.marked_price}}</strike> Rs.{{p.selling_price}}</span></p>
-  <p>Category: {{p.category}}</p>
+<div class="col-md-4" style="margin-top: 15px; margin-left:0px;">
+  <img class="imgs" src="{{p.image.url}}" alt=""  style="height:310px; width:291px; ">
+  <p class="font-size" style="margin-top:6px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Name: </span><span style=" font-size:16px;"><a href="{% url 'productdetail' p.slug %}" >{{p.title}}</a></span></p>
+  <p class="font-size" style="margin-top:-15px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Type: </span><span style=" font-size:16px;">{{p.category}}</span></p>
+  <p class="petss" style="margin-top:-15px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Price:</span> <span style="font-size: 16px;"><strike>Rs. {{p.marked_price}}</strike> Rs.{{p.selling_price}}</span></p>
+
 
   <a href="" class="btn btn-primary" style="margin-top:-12px;">Buy Now <i class="fas fa-shopping-cart fa-1x"></i></a><i class="fas fa-love"></i>
 
@@ -26,7 +27,25 @@ Pets
 
 <style>
   .imgs{
-    box-shadow: 2px 5px 15px 1px black;
+    box-shadow: 2px 5px 14px 1px gray;
+    border-radius: 4px;
+  }
+
+  .hds{
+      font-size: 36px !important;
+        font-family: 'Poppins', sans-serif;
+        text-shadow: 10px 8px 6px gray;
+        font-weight: bold;
+        color: black !important;
+        text-align: center;
+  }
+  .imgs:hover{
+    box-shadow: 2px 5px 14px 1px brown;
+
+
+  }
+  .container{
+  font-family: 'Poppins', sans-serif;
   }
 </style>
 {% endblock %}

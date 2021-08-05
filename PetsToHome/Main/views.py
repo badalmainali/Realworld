@@ -23,5 +23,17 @@ class PetsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
-        context['pets']=Pets.objects.all()
+        context['pets']=Pets.objects.all().order_by("-id")
         return context
+
+class ProductDetailView(TemplateView):
+    template_name = 'productdetail.html'
+
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        url_slug=self.kwargs['slug']
+        pets=Pets.objects.get(slug=url_slug)
+        context['pets']=pets
+        return context
+
+

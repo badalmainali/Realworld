@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %}
+
+
+{% block title %} Details {% endblock %}
+
+{% block content %}
+<div class="container">
+  <h3 class="text-center">Welcome to the detail page..</h3><hr>
+    <div class="row sml">
+        <div class="col-md-6 ">
+            <img src="{{pets.image.url}}" alt="" class="img-fluid cnt-img" width="400" height="360"><br>
+           <h3 style="margin-left:8%;">Pets Name: {{pets.title}}</h3>
+
+        </div>
+
+        <div class="col-md-6 details">
+
+            <p><span>Name:</span> {{pets.title}}</p>
+            <hr>
+            <p><span>Category:</span> {{pets.category}}</p>
+            <hr>
+            <p><span>Price:</span> <strike>Rs. {{pets.marked_price}}</strike> Rs. {{pets.selling_price}}</p>
+            <hr>
+
+            <p><span>Return Policy:</span> {{pets.return_policy}}</p>
+            <hr>
+            <p><span>Description: </span>{{pets.description}}</p>
+            <hr>
+             <p>Just a click away, <a href="" class="btn btn-primary">Add To Cart <i class="fas fa-shopping-cart fa-1x"></i></a></p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .cnt-img{
+        border-radius: 10px;
+         box-shadow: black 0px 20px 30px -10px;
+    }
+    .cnt-img:hover{
+        box-shadow: brown 0px 20px 30px -10px;
+
+    }
+    .details{
+        box-shadow: black 2px 8px 13px -6px;
+    height: 100%;
+    margin-top: 3%;
+}
+
+
+
+    .container{
+    font-family: 'Poppins', sans-serif;
+    }
+
+    p span{
+       font-weight: bolder;
+    }
+    h3{
+    text-shadow: 10px 8px 6px gray;
+    font-weight:bold;
+    }
+
+    @media only screen and (max-width: 767px) {
+       .details{
+            margin-top: 10%;
+
+       }
+       .cnt-img{
+        margin-left:5%;
+       }
+    }
+
+
+</style>
+{% endblock %}
+
+

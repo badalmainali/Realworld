@@ -1,0 +1,163 @@
+
+   .navs
+{
+
+width: 100%;
+background: rgb(36, 35, 35);
+position:fixed !important;
+z-index:1; /*Add this*/
+  width:100%;
+  height: auto;
+  text-align:center;
+  vertical-align:middle;
+  line-height:50px;
+  top:0px;
+
+
+}
+#navbar{
+    height: 90px;
+    width: 100%;
+    display: flex;
+
+
+}
+.navbar-brand{
+    font-size: 40px !important;
+    font-family: vollkorn;
+     text-shadow: 1px 2px 1px #699942;
+     font-weight: bold;
+     color: rgb(98, 240, 141) !important;
+
+}
+
+.navbar-txt{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: whitesmoke !important;
+}
+.nav-item{
+    margin-left: 10px;
+}
+.navbar-txt:hover{
+    color:yellowgreen !important;
+
+}
+
+    .txt-changing{
+    height: 400px;
+    width: 100%;
+    background: url("/static/images/pets.png") no-repeat center ;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+.cover-img{
+    filter: blur(5px);
+}
+.cover-img{
+    display: flex;
+    height: 120vh;
+    background: url(1.jpg) no-repeat center !important;
+    color: #fff;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 0;
+}
+
+
+
+
+
+.bg-image {
+    /* The image used */
+    background-image: url("images/pets.png");
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: static;
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin-left: 50%;
+  }
+
+
+  .form-horizontal{
+      background: url(https://cdn.hipwallpaper.com/i/85/56/TamSoR.jpg) center;
+  }
+
+  .input-lbl
+  {
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: rgb(233, 215, 215);
+
+  }
+
+  .inpt-field
+  {
+      background: none !important;
+        border: 1px solid rgb(191, 233, 128) !important;
+      box-shadow: rgb(157, 236, 120) 0px 20px 30px -10px;
+      color: rgb(78, 207, 106) !important;
+  }
+
+  .well-sm
+  {
+    box-shadow: rgb(27, 30, 32) 0px 20px 30px -10px !important;
+  }
+
+  .inpt-field:hover
+  {
+    box-shadow: rgb(240, 118, 81) 0px 20px 30px -10px;
+  }
+
+  .form-group
+  {
+      margin-left: 15%;
+  }
+
+  .cntct-submit
+  {
+      margin-right: 22%;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      border-radius: 6px;
+  }
+
+  .cntct-submit:hover{
+    box-shadow: rgb(219, 71, 25) 1px 20px 30px -10px;
+    background-color: cornflowerblue !important;
+  }
+
+
+.contact{
+    margin-top: none !important;
+}
+
+
+

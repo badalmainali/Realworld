@@ -6,9 +6,17 @@ urlpatterns=[
     path('',views.main,name="main"),
     path('about',views.about,name="about"),
     path('contact',views.contact,name="contact"),
-    path('register',views.register,name="register"),
+
     path('pets',views.PetsView.as_view(),name="pets"),
     path("pets/<slug:slug>/",ProductDetailView.as_view(),name="productdetail"),
+
+    path('addToCart<int:pro_id>/',AddToCartView.as_view(),name="addToCart"),
+    path('my-cart/',MyCartView.as_view(),name="mycart"),
+    path('manage-cart/<int:cp_id>/',ManageCart.as_view(),name="ManageCart"),
+    path('empty-cart/',EmptyCart.as_view(),name="emptycart"),
+    path('checkout/',Checkout.as_view(),name="checkout"),
+    path('register/',RegistrationView.as_view(),name="register"),
+
 
 
 ]

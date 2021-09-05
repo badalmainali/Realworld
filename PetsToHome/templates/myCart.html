@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}MyCart{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-center">My Cart</h4>
+      <table class="table table">
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>Pets</th>
+            <th>Rate</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for cp in cart.cartproduct_set.all %}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{cp.pets.title}}</td>
+        <td>{{cp.rate}}</td>
+        <td>{{cp.quantity}}</td>
+        <td>{{cp.subtotal}}</td>
+
+        <td>
+          <a class="btn btn-primary btn-sm" href="{% url 'ManageCart' cp.id %}?action=inc"><i class="fas fa-plus fa-xs"></i></a>
+          <a class="btn btn-warning btn-sm" href="{% url 'ManageCart' cp.id %}?action=dcr"><i class="fas fa-minus fa-xs"></i></a>
+          <a class="btn btn-danger btn-sm" href="{% url 'ManageCart' cp.id %}?action=rmv"><i class="fas fa-trash fa-xs"></i></a>
+        </td>
+          </tr>
+        {% endfor %}
+        <tr>
+          <th colspan="4" class="text-right">Total Amount: </th>
+          <th>Rs. {{cart.total}}</th>
+          {% if cart.cartproduct_set.all %}
+          <th><a href="{% url 'emptycart' %}" class="btn btn-danger btn-sm" style="color: white;">Empty Cart <i class="fas fa-trash fa-xs"></i></a> </th>
+
+          {% endif %}
+        </tr>
+        {% if cart.cartproduct_set.all %}
+        <tr>
+          <td colspan="12" class="text-right"><p>You can pay clicking here,   <a href="{% url 'checkout' %}" class="btn btn-info btn-sm" style="color: white;">Checkout <i class="fas fa-credit-card fa-xs"></i></a> </p></td>
+
+        </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+    .navs
+{
+
+width: 100%;
+background: rgb(36, 35, 35);
+position:fixed !important;
+z-index:1; /*Add this*/
+  width:100%;
+  height: auto;
+  text-align:center;
+  vertical-align:middle;
+  line-height:50px;
+  top:0px;
+
+
+}
+#navbar{
+    height: 90px;
+    width: 100%;
+    display: flex;
+
+
+}
+.navbar-brand{
+    font-size: 40px !important;
+    font-family: vollkorn;
+     text-shadow: 1px 2px 1px #699942;
+     font-weight: bold;
+     color: rgb(98, 240, 141) !important;
+
+}
+
+.navbar-txt{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: whitesmoke !important;
+}
+.nav-item{
+    margin-left: 10px;
+}
+.navbar-txt:hover{
+    color:yellowgreen !important;
+
+}
+
+    .txt-changing{
+    height: 400px;
+    width: 100%;
+    background: url("/static/images/pets.png") no-repeat center ;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+.container{
+    font-family: 'Poppins', sans-serif;
+    }
+</style>
+{% endblock %}

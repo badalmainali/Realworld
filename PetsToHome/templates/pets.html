@@ -7,17 +7,24 @@ Pets
 
 <div class="container mr-auto">
 <h1 class="text-center hds">Searching pets? Here you go...</h1><hr>
+  <p >Find all your added pets here: <a href="{% url 'mycart' %}" ><button class="btn btn-primary float-center">My Cart</button></a></p><hr>
 <div class="row" style="margin-left: 113px;">
+   {% if messages %}
+     {% for message in messages %}
+         <div class="text-center alert alert-{{ message.tags }}">
+             {{ message|safe }}
+         </div>
+     {% endfor %}
+ {% endif %}
 {% for p in pets %}
 <div class="col-md-4" style="margin-top: 15px; margin-left:0px;">
-  <img class="imgs" src="{{p.image.url}}" alt=""  style="height:310px; width:291px; ">
+  <a href="{% url 'productdetail' p.slug %}"> <img class="imgs" src="{{p.image.url}}" alt=""  style="height:310px; width:291px; "></a>
   <p class="font-size" style="margin-top:6px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Name: </span><span style=" font-size:16px;"><a href="{% url 'productdetail' p.slug %}" >{{p.title}}</a></span></p>
   <p class="font-size" style="margin-top:-15px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Type: </span><span style=" font-size:16px;">{{p.category}}</span></p>
   <p class="petss" style="margin-top:-15px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Price:</span> <span style="font-size: 16px;"><strike>Rs. {{p.marked_price}}</strike> Rs.{{p.selling_price}}</span></p>
 
 
-  <a href="" class="btn btn-primary" style="margin-top:-12px;">Buy Now <i class="fas fa-shopping-cart fa-1x"></i></a><i class="fas fa-love"></i>
-
+  <a href="{% url 'addToCart' p.id %}" class="btn btn-primary" style="margin-top:-12px;">Buy Now <i class="fas fa-shopping-cart fa-1x"></i></a><i class="fas fa-love"></i>
 
 </div>
 
@@ -38,6 +45,7 @@ Pets
         font-weight: bold;
         color: black !important;
         text-align: center;
+        background-color: #e6ffe6;
   }
   .imgs:hover{
     box-shadow: 2px 5px 14px 1px brown;

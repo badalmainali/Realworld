@@ -33,3 +33,15 @@ class RegistrationForm(forms.ModelForm):
 	class Meta:
 		model=Customer
 		fields=["username","password","email","full_name","address"]
+
+	#username validation
+	def clean_username(self):
+		uname=self.cleaned_data.get("username")
+		if User.objects.filter(username=uname).exists():
+
+			raise forms.ValidationError(" x User already exists. x")
+		return uname
+
+class LoginForm(forms.Form):
+	username=forms.CharField(widget=forms.TextInput())
+	password=forms.CharField(widget=forms.PasswordInput())

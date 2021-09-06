@@ -16,6 +16,10 @@ urlpatterns=[
     path('empty-cart/',EmptyCart.as_view(),name="emptycart"),
     path('checkout/',Checkout.as_view(),name="checkout"),
     path('register/',RegistrationView.as_view(),name="register"),
+    path('logout/',LogoutView.as_view(),name="logout"),
+    path('login/',LoginView.as_view(),name="login"),
+
+
 
 
 

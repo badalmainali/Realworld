@@ -2,10 +2,11 @@ from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 from django.views import View
 
-from .forms import NewUserForm, CheckoutForm, RegistrationForm
+from .forms import NewUserForm, CheckoutForm, RegistrationForm, LoginForm
 from django.contrib.auth import login
 from django.contrib import messages #import messages
 from django.views.generic import TemplateView,FormView,CreateView
+from django.contrib.auth import authenticate,login,logout
 from .models import *
 
 # Create your views here.
@@ -79,7 +80,6 @@ class AddToCartView(TemplateView):
                                                      quantity=1, subtotal=pets_obj.selling_price)
             cart_obj.total += pets_obj.selling_price
             cart_obj.save()
-
         #check if pets already exists
         return context
 
@@ -196,4 +196,33 @@ class Checkout(CreateView):
 class RegistrationView(CreateView):
     template_name = 'register.html'
     form_class = RegistrationForm
-    success_url = reverse_lazy("/")
+    success_url = reverse_lazy("main")
+
+    def form_valid(self, form):
+        username=form.cleaned_data.get("username")
+        password=form.cleaned_data.get("password")
+        email=form.cleaned_data.get("email")
+        user=User.objects.create_user(username,email,password)
+        form.instance.user=user
+        login(self.request,user)
+        return super().form_valid(form)
+
+class LogoutView(View):
+    def get(self,request):
+        logout(request)
+        return redirect("main")
+
+class LoginView(FormView):
+    template_name = "login.html"
+    form_class = LoginForm
+    success_url = reverse_lazy("main")
+
+    def form_valid(self, form):
+        uname=form.cleaned_data.get("username")
+        pword=form.cleaned_data.get("password")
+        usr=authenticate(username=uname,password=pword)
+        if usr is not None and usr.customer:
+            login(self.request,usr)
+        else:
+            return render(self.request,self.template_name,{"form":LoginForm, "error":"Credentials didn't match"})
+        return super().form_valid(form)

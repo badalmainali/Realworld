@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}
-Pets
+<title>Pets</title>
 {% endblock %}
 
 {% block content %}
 
 <div class="container mr-auto">
 <h1 class="text-center hds">Searching pets? Here you go...</h1><hr>
-  <p >Find all your added pets here: <a href="{% url 'mycart' %}" ><button class="btn btn-primary float-center">My Cart</button></a></p><hr>
+  <p  class="text-center">Find all your added pets here: <a href="{% url 'mycart' %}" ><button class="btn btn-primary ">My Cart</button></a></p><hr>
+
 <div class="row" style="margin-left: 113px;">
    {% if messages %}
      {% for message in messages %}

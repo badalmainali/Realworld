@@ -1,26 +1,119 @@
 {% extends 'base.html' %}
 
 {% block title %}
-About Us
+<title>About Us</title>
 {% endblock %}
 
 
 {% block content %}
 <div class="container">
-<div class="row">
-<div class="col-xss-6" style="margin-left:-10%;">
-    <img src="static/images/about.png" style=" height: 500px; display: flex;
+<div class="row text-center">
+<div class="col-md-6 ">
+    <img class="responsive" src="static/images/about.png" style=" display: flex;
   justify-content: center;
-  width: inherit;
+
   overflow: hidden;">
 </div>
 
-    <div class="col-xss-6" style="background-color:red; margin-top:5%;">
-        <h1>ABOUT US</h1>
-        <p> Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual presentation. Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as
-        Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual presentation. Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as</p>
+    <div class="col-md-6 mt-5" >
+        <h1 style="font-weight: bold; text-shadow: 10px 3px 4px gray;"> <span style="color: brown;">ABOUT </span> US</h1>
+        <p > As everywhere we see that everything is available online. After huge research and investigation we came to know that we can't buy pets online and we decided to establish this page from where we can easily buy our desired pets.
+        Now customer can easily go through different pets and can order their pets also we established online payment method. Pets are delivered to your door and we offer only legit pets.</p>
     </div>
+    </div>
+<br><hr>
+ <h1 class="text-center mt-6" style="color: brown; text-shadow: 10px 8px 6px gray;">Meet Our <span style="color: black;">Experts</span></h1>
+    <div class="row mt-6 text-center">
+        <div class="col-md-3 card">
+            <img src="https://scontent.fktm4-1.fna.fbcdn.net/v/t1.6435-9/154744448_2981740345392703_3237479108771391612_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=3iuzcBvrXh4AX988qET&_nc_ht=scontent.fktm4-1.fna&oh=43d8c5348c6f901537cad5bb94653fa4&oe=615F8D1B">
+            <div class="card-body">
+                <h5>Badal Mainali</h5>
+                <p>Programmer/Debugger</p>
+                  <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 card">
+            <img src="static/about_us/srijan.jpg">
+            <div class="card-body">
+                <h5>Srijan Giri</h5>
+                <p>Designer/GitBash</p>
+                  <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+
+       <div class="col-md-3 card">
+           <img src="static/about_us/krishna.jpg">
+            <div class="card-body">
+
+                <h5>Krishna Raut</h5>
+                <p>Coder/UI/UX</p>
+                  <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3 card">
+             <img src="static/about_us/abishek.jpg">
+            <div class="card-body">
+
+                <h5>Abishek Thapa</h5>
+                <p>Researcher</p>
+                  <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+         <div class="col-md-4  ">
+
+
+        </div>
+        <div class="col-md-3 card ml-8">
+             <img src="static/about_us/abishek.jpg">
+            <div class="card-body">
+
+                <h5>Anup Giri</h5>
+                <p>Documentation Expert</p>
+                  <a href="#" class="card-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-github"></i></a>
+                  <a href="#" class="card-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 ">
+
+
+        </div>
+
     </div>
 
     </div>
+
+<style>
+    .container{
+    font-family: 'Poppins', sans-serif;
+    }
+
+</style>
 {% endblock %}

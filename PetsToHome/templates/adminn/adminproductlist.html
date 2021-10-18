@@ -1,0 +1,37 @@
+{% extends "adminn/adminbase.html" %}
+{% block title %}All Products{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <h2 class="text-center" style="color: brown;">All Pets List</h2><hr>
+          <a class="btn btn-primary text-center" href="{% url 'adminproductadd' %}">Add New Pets</a>
+          <table class="table bg-light table-striped">
+              <thead class="bg-dark" style="color: white;">
+              <tr>
+                  <th>SN</th>
+                  <th>Pets Title</th>
+                  <th>Image</th>
+                  <th>Price</th>
+                  <th>Category</th>
+
+              </tr>
+              </thead>
+
+              <tbody>
+              {% for p in allproducts %}
+              <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{p.title}}</td>
+                  <td><img src="{{p.image.url}}" style="height: 75px; width: 70px;"></td>
+                  <td>{{p.selling_price}}</td>
+                  <td>{{p.category}}</td>
+              </tr>
+              {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+{% endblock %}

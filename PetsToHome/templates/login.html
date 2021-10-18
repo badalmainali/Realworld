@@ -11,8 +11,9 @@
         {% csrf_token %}
         {{form.as_p}}
 <br>
-         <button class="btn btn-primary btn-xl" style="margin-left:12%;"> L O G I N </button><br><hr>
-          <p>Go back to registration page, <a class="btn btn-info" href="{% url 'register' %}">Register</a></p>
+         <button class="btn btn-primary btn-xl" style="margin-left:12%;"> L O G I N </button>
+      <br><hr>
+          <p>Go back to registration page, <a class="btn btn-info" href="{% url 'register' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register</a></p>
           {% if error %}
           <h5 style="color:red;">{{error}}</h5>
           {% endif %}

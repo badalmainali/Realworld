@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}<title>Order Detail</title>{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h3 class="text-center">Order Details</h3><hr>
+            <p><span class="font-weight-bold">Order ID: </span> #ORDER_{{ord_obj.id}}</p>
+            <p><span class="font-weight-bold">Order Status: </span> {{ord_obj.order_status}}</p>
+            <p><span class="font-weight-bold">Ordered On: </span> {{ord_obj.cart.created_at}}({{ord_obj.cart.created_at|timesince}}ago)</p>
+            <p><span class="font-weight-bold">Customer Info: </span> {{ord_obj.ordered_by}}, {{ord_obj.mobile}}</p>
+            <p><span class="font-weight-bold">Shipping Info: </span> {{ord_obj.shipping_address}}, ({{ord_obj.email}})</p>
+            <hr>
+            <h4>Ordered Items</h4>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Item</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cp in ord_obj.cart.cartproduct_set.all %}
+                    <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td><a target="_blank" href="{% url 'productdetail' cp.pets.slug %}">{{cp.pets.title}}</a></td>
+                    <td>{{cp.rate}}</td>
+                    <td>{{cp.quantity}}</td>
+                    <td>{{cp.subtotal}}</td>
+                    </tr>
+                    {% endfor %}
+                <tr>
+                    <th colspan="4" class="text-right">Total:</th>
+                    <th>{{ord_obj.total|intcomma}}</th>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<style>
+        .navs
+{
+
+width: 100%;
+background: rgb(36, 35, 35);
+position:fixed !important;
+z-index:1; /*Add this*/
+  width:100%;
+  height: auto;
+  text-align:center;
+  vertical-align:middle;
+  line-height:50px;
+  top:0px;
+
+
+}
+#navbar{
+    height: 90px;
+    width: 100%;
+    display: flex;
+
+
+}
+.navbar-brand{
+    font-size: 40px !important;
+    font-family: vollkorn;
+     text-shadow: 1px 2px 1px #699942;
+     font-weight: bold;
+     color: rgb(98, 240, 141) !important;
+
+}
+
+.navbar-txt{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: whitesmoke !important;
+}
+.nav-item{
+    margin-left: 10px;
+}
+.navbar-txt:hover{
+    color:yellowgreen !important;
+
+}
+p span{
+    font-weight: bold;
+    color: brown;
+  }
+ .container{
+    font-family: 'Poppins', sans-serif;
+    }
+</style>
+{% endblock %}

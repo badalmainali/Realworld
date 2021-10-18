@@ -1,0 +1,50 @@
+{% extends "adminn/adminbase.html" %}
+{% block title %}Add Pets {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <h2>Add New Pets</h2><hr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-info">Add Pets</button>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    p input{
+   width: 210px;
+   height: 34px;
+
+  border: 0.5px solid rgb(191, 233, 128) !important;
+
+
+ }
+ p label{
+        width: 150px;
+ }
+ #id_category{
+    width: 210px;
+   height: 34px;
+
+  border: 0.5px solid rgb(191, 233, 128) !important;
+
+ }
+ #id_image{
+    width: 210px;
+   height: 34px;
+
+  border: None;
+ }
+ #id_description{
+    width: 210px;
+   height: 200px;
+
+  border: 0.5px solid rgb(191, 233, 128) !important;
+
+ }
+</style>
+{% endblock %}

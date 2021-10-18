@@ -18,6 +18,23 @@ urlpatterns=[
     path('register/',RegistrationView.as_view(),name="register"),
     path('logout/',LogoutView.as_view(),name="logout"),
     path('login/',LoginView.as_view(),name="login"),
+    path('profile/',CustomerProfileView.as_view(),name='customerprofile'),
+    path('profile/order-<int:pk>/',CustomerOrderDetailView.as_view(),name="cutomerdetail"),
+
+    path('admin-login/',AdminLoginView.as_view(),name="adminlogin"),
+    path('admin-home/',AdminHomeView.as_view(),name="adminhome"),
+    path('admin-order/<int:pk>/',AdminOrderDetailView.as_view(),name="admin-order"),
+    path('admin-all-orders/',AdminOrderList.as_view(),name="adminorderlist"),
+    path('admin-order-<int:pk>-change/',AdminOrderStatus.as_view(),name="adminorderstatus"),
+
+    path("esewa-request/",EsewaRequest.as_view(),name="esewarequest"),
+    path("esewa-verify/",EsewaVerify.as_view(),name="esewaverify"),
+    path("admin-product/list/",AdminProductList.as_view(),name="adminproductlist"),
+path("admin-product/add/",AdminProductAdd.as_view(),name="adminproductadd")
+
+
+
+
 
 
 

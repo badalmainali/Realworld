@@ -1,28 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %}<title>Registration</title>{% endblock %}
+{% block title %}<title>AdminLogin</title>{% endblock %}
 
 {% block content %}
 <div class="container regs">
   <div class="row">
-    <div class="col-md-7 mx-auto">
-      <h3 class="text-center"><span style="color:brown;">Registration Form</span> <i class="fas fa-user"></i></h3><hr>
-      <form action="" method="post" class="text-center">
-        {% csrf_token %}
+    <div class="col-md-6 mx-auto mt-2">
+      <h3 class="text-center"><span style="color:brown;">Admin Login Form</span> <i class="fas fa-user"></i></h3><hr>
+      <form action="" method="POST" class="text-center">
+          {% csrf_token %}
         {{form.as_p}}
-
-        <p> New user? You can register here, <button class="btn btn-primary mx-auto">Register</button> </p>
+<br>
+         <button class="btn btn-primary btn-xl" style="margin-left:12%;"> L O G I N </button><br><hr>
+    {% if error %}
+    <h5 style="color: red;">{{error}}</h5>
+    {% endif %}
       </form>
-    </div>
-    <div class="col-md-5 mx-auto text-center">
-      <h3 class="text-center"><span style="color:brown;">Login Form</span> <i class="fas fa-sign-in-alt"></i></h3><hr>
-      <img src="https://image.flaticon.com/icons/png/128/560/560216.png" class="mx-auto">
-      <p>Already User? You can login clicking here, </p>
-      <a class="btn btn-info mt-3" href="{% url 'login' %}">Login</a>
-      <a class="btn btn-primary mt-3" href="{% url 'adminlogin' %}">AdminLogin</a>
-
-
-
     </div>
 
 

@@ -15,12 +15,9 @@
                   <a class="nav-link navbar-txt" href="{% url 'pets' %}">Pets</a>
                 </li>
 
-                <li class="nav-item active">
-                  <a class="nav-link navbar-txt" href="#">PetsRelated</a>
-                </li>
 
                 <li class="nav-item active">
-                  <a class="nav-link  navbar-txt" href="#">E-Vetenary</a>
+                  <a class="nav-link  navbar-txt" href="#">Pets-Blogs</a>
                 </li>
 
                 <li class="nav-item active">
@@ -37,7 +34,8 @@
 
                 <li style="color: yellow;" class="mt-2">
                 {% if request.user.customer %}
-                Welcome, {{request.user.username}}!
+                Welcome, {{request.user.username}} |
+                  <a href="{% url 'customerprofile' %}" style="color:white;">My Profile</a> |
                   <a href="{% url 'logout' %}"class="btn btn-danger btn-sm"> <i class="fas fa-sign-out-alt"></i></a>
                 {% else %}
                 </li>

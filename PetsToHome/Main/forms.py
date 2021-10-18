@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Order,Customer
+from .models import Order,Customer,Pets
 
 
 # Create your forms here.
@@ -24,7 +24,7 @@ class NewUserForm(UserCreationForm):
 class CheckoutForm(forms.ModelForm):
 	class Meta:
 		model=Order
-		fields=["ordered_by","shipping_address","mobile","email"]
+		fields=["ordered_by","shipping_address","mobile","email","payment_method"]
 
 class RegistrationForm(forms.ModelForm):
 	username=forms.CharField(widget=forms.TextInput())
@@ -45,3 +45,13 @@ class RegistrationForm(forms.ModelForm):
 class LoginForm(forms.Form):
 	username=forms.CharField(widget=forms.TextInput())
 	password=forms.CharField(widget=forms.PasswordInput())
+
+class AdminLoginForm(forms.Form):
+	username=forms.CharField(widget=forms.TextInput())
+	password=forms.CharField(widget=forms.PasswordInput())
+
+class ProductForm(forms.ModelForm):
+	class Meta:
+		model=Pets
+		fields=["title","slug","category","image","marked_price","selling_price","description","return_policy"]
+
